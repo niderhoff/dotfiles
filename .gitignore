@@ -1,0 +1,9 @@
+mpd/*
+!mpd/mpd.conf
+ncmpcpp/error.log
+todo/*
+!todo/config
+lastupdate
+proxy
+profile_proxy
+aliases_proxy

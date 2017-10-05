@@ -1,0 +1,53 @@
+#!/bin/bash
+# Workspace switcher for GNOME
+# Author: thevtm@github
+#
+# Based on Andy Balaam's workspace-switcher
+# http://www.artificialworlds.net/blog/2011/03/04/switching-workspace-in-gnome-via-the-command-line/
+#
+# REQUIREMENTS:
+#  * wmctrl
+#
+# USAGE:
+# `workspace-switcher Up` to move up
+# `workspace-switcher Down` to move down
+
+
+CMD="$1"
+
+NUM_WORKSPACES=`wmctrl -d | cut -d " " -f 1 | tail -1`
+CURRENT_WS=`wmctrl -d | grep \* | cut -d " " -f 1`
+
+MOVE_UP="-1"
+MOVE_DOWN="+1"
+
+case $CMD in
+
+"Up" )
+	if [[ $CURRENT_WS -eq 0 ]]; then
+	{
+		NEW_WS=$CURRENT_WS
+	}
+	else
+	{
+		NEW_WS=`echo $CURRENT_WS "- 1" | bc`
+	}; fi
+	;;
+
+"Down" )
+	if [[ $CURRENT_WS -eq $NUM_WORKSPACES ]]; then
+	{
+		NEW_WS=$CURRENT_WS
+	}
+	else
+	{
+		NEW_WS=`echo $CURRENT_WS "+ 1" | bc`
+	}; fi
+	;;
+
+* )
+	NEW_WS=$CMD
+
+esac
+
+wmctrl -s $NEW_WS

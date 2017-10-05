@@ -1,0 +1,80 @@
+# General
+alias refresh="source ~/.zshrc; echo \"Reloaded .zshrc.\""
+alias oo="open ."
+alias o="open"
+alias hist="history | grep"
+alias ..="cd .."
+alias ...="cd ../.."
+alias gsst="git submodule status --recursive"
+alias gsp="git submodule foreach git pull origin master"
+alias ls="ls -GFh --color=auto"
+alias ll="ls -alF"
+alias la="ls -A"
+alias py="python"
+alias nb="jupyter-notebook"
+alias t="todo.sh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias mdn="vim ~/Dropbox/MarkDown"
+alias a="atom $HOME/Documents/Projects"
+alias exclude='echo "$1" >> .git/info/exclude'
+alias sa="source activate"
+alias sd="source deactivate"
+alias sc="source activate root"
+alias jsw="jekyll serve --watch"
+alias je="jekyll serve"
+
+# Gzip-enabled `curl`
+alias gurl="curl --compressed"
+
+# Get week number
+alias week="date +%V"
+
+# software update
+alias update="sh $HOME/bin/updateall.sh"
+#alias macupdate="sudo softwareupdate -i -a"
+alias Rupdate="Rscript -e 'update.packages(ask=F)'"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+
+# Enhanced WHOIS lookups
+alias whois="whois -h whois-servers.net"
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# URL-encode strings
+alias urlencode="python -c \"import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);\""
+
+# Open github
+alias gh="open https://github.com/niderhoff"
+
+# Weather
+function weather() {
+    curl "http://wttr.in/${1-}";
+}
+alias moon="curl 'http://wttr.in/Moon'"
+
+# Anaconda
+function ipy() {
+    if [[ -z "${CONDA_PREFIX// }" ]]; then
+        PYTHONDONTWRITEBYTECODE=1 $HOME/anaconda2/bin/ipython
+    else
+        PYTHONDONTWRITEBYTECODE=1 ipython
+    fi
+}
+# jupyter tstyles
+alias jtdark="jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T"
+alias jtlite="jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T"
+alias jtdef="jt -r"
+
+# gitignore
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
