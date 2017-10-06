@@ -14,13 +14,13 @@ elif [[ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]]; then
 fi
 
 if [[ "$platform" == "osx" ]]; then
-    osx_installers=( brew conda zsh iterm gitignore apm r jupyter )
+    osx_installers=( brew conda zsh iterm gitignore apm r jupyter vim )
     for script in ${osx_installers[@]}
     do
         sh -x $platform-$script.sh
     done
 elif [[ "$platform" == "linux" ]]; then
-    linux_installers=( conda zsh gitignore r jupyter )
+    linux_installers=( conda zsh gitignore r jupyter vim )
     for script in ${linux_installers[@]}
     do
         sh -x $platform-$script.sh

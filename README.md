@@ -21,3 +21,4 @@
 *   Add VIM submodule
 *   Add ATOM submodule
 *   Make sure proxy settings are set BEFORE anything else during setup process.
+*   .gitignore_global
