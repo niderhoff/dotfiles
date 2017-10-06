@@ -1,0 +1,14 @@
+#!/bin/sh
+# deletes all R packages except the base stuff
+rexc="remove.packages(installed.packages(priority = \"NA\")[,1])"
+
+prmpt="Are you sure you want to DELETE ALL R PACKAGES? (yes/no)"
+
+while true; do
+    read -p "$prmpt" yn
+    case $yn in
+        [Yy]* ) Rscript -e "$rexc"; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done

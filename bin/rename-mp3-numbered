@@ -1,0 +1,6 @@
+n=38
+for file in *.mp3; do
+	j=$(printf "%04d" $n)
+	mv "${file}" "$j"." $file";
+	n=$((n+1))
+done

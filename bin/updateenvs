@@ -4,7 +4,7 @@ set -e
 cd "$(dirname "$0")"
 
 # TODO: this is a workaround for bash throwing the
-# 'grep command not found' error whe nusing regex over
+# 'grep command not found' error when using regex over
 # the pipe.
 conda env list > /tmp/envlist.txt
 ENVS=$(grep "^[^#]" /tmp/envlist.txt | awk '{print $1}')
