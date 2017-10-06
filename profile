@@ -1,18 +1,3 @@
-# PATH
-export PATH=/usr/local/cuda-7.5/bin:$PATH
-
-if [ -d "$HOME/.local/bin" ]; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-if [ -d "$HOME/anaconda2/bin" ]; then
-    PATH="$HOME/anaconda2/bin:$PATH"
-fi
-
-if [ -d "$HOME/.bin" ]; then
-    PATH="$HOME/.bin:$PATH"
-fi
-
 # dotfiles
 export DOTFILES="$HOME/.dotfiles"
 
@@ -20,8 +5,23 @@ export DOTFILES="$HOME/.dotfiles"
 export PYVERSION=2
 export CONDABIN="$HOME/anaconda"$PYVERSION"/bin"
 
+# PATH
+export PATH=/usr/local/cuda-7.5/bin:$PATH
+
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$CONDABIN/bin" ]; then
+    PATH="$CONDABIN/bin:$PATH"
+fi
+
+if [ -d "$HOME/.bin" ]; then
+    PATH="$HOME/.bin:$PATH"
+fi
+
 # proxy switch scripts
-source $HOME/.proxy
+source $DOTFILES/proxy
 source $DOTFILES/profile_proxy
 
 # Environment

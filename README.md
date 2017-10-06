@@ -15,9 +15,13 @@
 
 *   Finish setup:
     *   make sure all is working
+    *   add zsh installation
     *   fix gitignore-global.sh
     *   make sure execution order is correct
 *   add dynamic gitconfig script
+*   make sure weird windows zsh startup thing
+    a.  does not inferere with regular ubuntu zsh start
+    b.  is only executed if windows is actual host
 *   Merge with OSX dotfiles
     *   wallpapers
     *   osx-specific stuff
