@@ -16,6 +16,10 @@ fi
 # dotfiles
 export DOTFILES="$HOME/.dotfiles"
 
+# anacondaversion
+export PYVERSION=2
+export CONDABIN="$HOME/anaconda"$PYVERSION"/bin"
+
 # proxy switch scripts
 source $HOME/.proxy
 source $DOTFILES/profile_proxy

@@ -20,7 +20,7 @@ if [[ "$platform" == "osx" ]]; then
         sh -x $platform-$script.sh
     done
 elif [[ "$platform" == "linux" ]]; then
-    linux_installers=( conda zsh gitignore r jupyter vim )
+    linux_installers=( conda gitignore vim )
     for script in ${linux_installers[@]}
     do
         sh -x $platform-$script.sh
