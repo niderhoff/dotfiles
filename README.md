@@ -13,12 +13,14 @@
 
 ## TODO
 
-*   Make sure that $pyversion is exported to a global variable that is read over
-    .profile so all anaconda paths are dynamic to the python version.
-*   Make sure when using the setup that the following order will be executed:
-    git clone > symlink important stuff from .dotfiles > execute setup > dotfiles --sync
+*   Finish setup:
+    *   make sure all is working
+    *   fix gitignore-global.sh
+    *   make sure execution order is correct
+*   add dynamic gitconfig script
 *   Merge with OSX dotfiles
-*   Add VIM submodule
+    *   wallpapers
+    *   osx-specific stuff
+    *   osx-setupscripts
 *   Add ATOM submodule
 *   Make sure proxy settings are set BEFORE anything else during setup process.
-*   .gitignore_global
