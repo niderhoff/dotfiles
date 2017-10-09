@@ -9,12 +9,12 @@ You need:
 
 Put the following lines into "~/.dotfilesrc"
 
-    $ [dotfiles]
-    $ repository = ~/Dotfiles
-    $ ignore = [
-    $     '.git',
-    $     '.gitignore',
-    $     '*.swp']
+    [dotfiles]
+    repository = ~/Dotfiles
+    ignore = [
+        '.git',
+        '.gitignore',
+        '*.swp']
     
 Then do:
 
