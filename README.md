@@ -4,8 +4,10 @@
 
 You need:
 
-*   Git, Working internet connection
-*   Put the following lines into "~/.dotfilesrc"
+*   Git
+*   Working internet connection
+
+Put the following lines into "~/.dotfilesrc"
 
     $ [dotfiles]
     $ repository = ~/Dotfiles
@@ -14,7 +16,7 @@ You need:
     $     '.gitignore',
     $     '*.swp']
     
-*   Then do:
+Then do:
 
     $ pip install dotfiles
 
