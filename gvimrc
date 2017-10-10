@@ -1,0 +1,1 @@
+/home/niid/.dotfiles/vim/gvimrc

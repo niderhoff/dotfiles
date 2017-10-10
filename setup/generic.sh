@@ -1,16 +1,14 @@
 #!/bin/sh
 cd $HOME
 
-$CONDABIN/dotfiles --sync
-
 if [ ! -f $HOME/.vimrc ]; then
-    ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
+    ln -s ~/.dotfiles/vim/vimrc $DOTFILES/vimrc
 fi
 
 if [ ! -f $HOME/.gvimrc ]; then
-    ln -s ~/.dotfiles/vim/gvimrc ~/.gvimrc
+    ln -s ~/.dotfiles/vim/gvimrc $DOTFILES/gvimrc
 fi
 
-ln -s $CONDABIN/conda $HOME/.bin/conda
-ln -s $CONDABIN/activate $HOME/.bin/activate
-ln -s $CONDABIN/deactivate $HOME/.bin/deactivate
+ln -s $CONDABIN/conda $DOTFILES/bin/conda
+ln -s $CONDABIN/activate $DOTFILES/bin/activate
+ln -s $CONDABIN/deactivate $DOTFILES/bin/deactivate

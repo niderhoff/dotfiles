@@ -6,9 +6,9 @@
 #
 
 set -e
-url="https://repo.continuum.io/archive/Anaconda"$PYVERSION"-5.0.0.1-Linux-x86_64.sh"
+url="https://repo.continuum.io/archive/Anaconda"$PYVERSION"-4.4.0-Linux-x86_64.sh"
 
-cd "$(dirname "$0")"
+cd $HOME
 
 # check for anaconda
 if [[ ! -f $CONDABIN/conda ]]; then

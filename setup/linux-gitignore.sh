@@ -20,3 +20,5 @@ gi $(joinString , ${GLOBAL[@]}) > $HOME/.dotfiles/gitignore_global
 if [[ -f custom_gitignore.txt ]]; then
     cat custom_gitignore.txt >> $HOME/.dotfiles/gitignore_global
 fi
+
+# $DOTFILESBIN --sync

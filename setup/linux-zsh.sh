@@ -5,7 +5,7 @@ cd "$(dirname "$0")"
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "   Installing Oh My ZShell!"
-    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    git clone https://github.com/robbyrussell/oh-my-zsh ~/.oh-my-zsh
 fi
 
 if [ ! $SHELL == "/usr/local/bin/zsh" ]; then 
