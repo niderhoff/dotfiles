@@ -31,7 +31,7 @@ alias gurl="curl --compressed"
 alias week="date +%V"
 
 # software update
-alias update="sh $HOME/bin/updateall"
+alias update="sh $DOTFILES/bin/updateall"
 #alias macupdate="sudo softwareupdate -i -a"
 alias Rupdate="Rscript -e 'update.packages(ask=F)'"
 
