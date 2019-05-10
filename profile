@@ -5,6 +5,9 @@ if [[ "$(< /proc/sys/kernel/osrelease)" == *Microsoft ]]; then
     export DOTFILES_OS="WSL"
 fi
 
+export NNN_USE_EDITOR=1
+export PAGER=less
+
 # PYTHON
 # export PYVERSION=3
 # export CONDABIN="$HOME/miniconda"$PYVERSION"/bin"
@@ -33,23 +36,20 @@ fi
 [ -r ".aliases" ] && source ".aliases"
 
 # proxy switch scripts
-if [ -d $HOME/.proxy ]; then
+if [ -f $HOME/.proxy ]; then
     source $HOME/.proxy
 fi
 
 # SSH
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+# if [[ -n $SSH_CONNECTION ]]; then
 if [ -n "$SSH_CLIENT" ]; then
     PS1="(ssh) $PS1"
+    export EDITOR='vim'
 else
     PS1=$PS1
+    export EDITOR='vim'
 fi
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#     export EDITOR='vim'
-# else
-#     export EDITOR='vim'
-# fi
 
 LASTAPT=$(ls -l /var/lib/apt/periodic/update-success-stamp | awk '{print $5" "$6" "$7}')
 #LASTUPDATE=$(cat $DOTFILES/lastupdate | sed -n 1p)
