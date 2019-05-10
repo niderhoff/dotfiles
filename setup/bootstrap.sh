@@ -1,4 +1,14 @@
-pip3 install --user dotfiles
+if [ ! $PIP_BIN ]; then
+    echo "ERROR: NO PIP_PATH set."
+    exit 1
+fi
+
+if [ ! $DOTFILES ]; then
+    echo "ERROR: NO DOTFILES PATH set."
+    exit 1
+fi
+
+$PIP_BIN install --user dotfiles
 cd $HOME
-ln -s $HOME/.dotfiles/dotfilesrc .dotfilesrc
+ln -s $DOTFILES/dotfilesrc .dotfilesrc
 dotfiles --sync

@@ -9,7 +9,6 @@ fi
 if [ ! $DOTFILES ]; then
     DOTFILES=$HOME/.dotfiles
     echo "\$DOTFILES is not set, defaulting to: $DOTFILES"
-    exit 1
 else
     echo "DOTFILES Path: $DOTFILES"
 fi
@@ -17,7 +16,6 @@ fi
 if [ ! $PIP_BIN ]; then
     PIP_BIN=/usr/bin/pip3
     echo "\$PIP_BIN is not set, defaulting to: $PIP_BIN"
-    exit 1
 else
     echo "PIP_BIN: $PIP_BIN"
 fi
