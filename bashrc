@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-if [ -f ~/.bash_aliases]; ten
+if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 

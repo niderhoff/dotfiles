@@ -7,8 +7,10 @@ if [ "$1" == "" ] || [ $# -gt 1 ]; then
 fi
 
 if [ ! $DOTFILES ]; then
-    DOTFILES=$HOME/.dotfiles
-    echo "\$DOTFILES is not set, defaulting to: $DOTFILES"
+#    DOTFILES=$HOME/.dotfiles
+#    echo "\$DOTFILES is not set, defaulting to: $DOTFILES"
+    echo "\$DOTFILES is not set."
+    exit 1
 else
     echo "DOTFILES Path: $DOTFILES"
 fi
@@ -26,14 +28,27 @@ if [ "$1" == "wsl" ]; then
         . ../proxy
         ln -s $DOTFILES/proxy $HOME/.proxy
     fi
-    . install-wsl.sh
-    . bootstrap.sh
+    source install-wsl.sh
+    source bootstrap.sh
     cd $DIR
-    . install-pip.sh
+    source install-pip.sh
 elif [ "$1" == "linux" ]; then
-    . bootstrap.sh
+    source bootstrap.sh
     cd $DIR
-    . install-pip.sh
+    source install-pip.sh
 else
     echo "Command unknown..."
+fi
+
+echo "Running post-install..."
+
+sed -i "s|<dotfiles>|$DOTFILES|g" ../profile
+
+if [ $INSTALL_ZSH ]; then
+    source install-zsh.sh
+else
+    # clear screen
+    # echo -en "\ec"
+    source $HOME/.bash_profile
+    source $HOME/.bashrc
 fi

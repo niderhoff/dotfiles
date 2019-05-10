@@ -1,4 +1,4 @@
-export DOTFILES="$HOME/.dotfiles"
+export DOTFILES=/home/niid/.dotfiles
 
 # check for WSL
 if [[ "$(< /proc/sys/kernel/osrelease)" == *Microsoft ]]; then
