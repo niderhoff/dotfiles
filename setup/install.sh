@@ -1,3 +1,4 @@
+#!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 if [ "$1" == "" ] || [ $# -gt 1 ]; then
@@ -5,16 +6,36 @@ if [ "$1" == "" ] || [ $# -gt 1 ]; then
     exit 1
 fi
 
+if [ ! $DOTFILES ]; then
+    DOTFILES=$HOME/.dotfiles
+    echo "\$DOTFILES is not set, defaulting to: $DOTFILES"
+    exit 1
+else
+    echo "DOTFILES Path: $DOTFILES"
+fi
+
+if [ ! $PIP_BIN ]; then
+    PIP_BIN=/usr/bin/pip3
+    echo "\$PIP_BIN is not set, defaulting to: $PIP_BIN"
+    exit 1
+else
+    echo "PIP_BIN: $PIP_BIN"
+fi
+
 if [ "$1" == "wsl" ]; then
-    if [[ -f ../proxy ]]; then . ../proxy; fi
+    if [[ -f ../proxy ]]; then
+        echo "Loading Proxy Settings..."
+        . ../proxy
+        ln -s $DOTFILES/proxy $HOME/.proxy
+    fi
     . install-wsl.sh
     . bootstrap.sh
     cd $DIR
     . install-pip.sh
-fi
-
-if [ "$1" == "linux" ]; then
+elif [ "$1" == "linux" ]; then
     . bootstrap.sh
     cd $DIR
     . install-pip.sh
+else
+    echo "Command unknown..."
 fi
