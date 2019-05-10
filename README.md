@@ -15,3 +15,5 @@
 
 - bootstrap pip version should be 
 - Automatically source proxy before bootstrap
+- merge osx stuff
+- add new vimrc
