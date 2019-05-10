@@ -1,8 +1,6 @@
 # linux.dotfiles
 
-## Preqrequisites
-
-You need:
+## Preqrequisites Installation
 
 *   Git
 *   Working internet connection
@@ -15,17 +13,16 @@ Put the following lines into "~/.dotfilesrc"
         '.git',
         '.gitignore',
         '*.swp']
-    
+
 Then do:
 
     $ pip install dotfiles
 
-## Actual Installation
+## Dotfiles Installation
 
     $ cd
     $ git clone https://github.com/niderhoff/linux.dotfiles.git ~/.dotfiles
-    $ cd ~/.dotfiles
-    $ sudo make linux
+    $ dotfiles --sync
 
 ## TODO
 
