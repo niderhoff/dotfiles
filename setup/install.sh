@@ -37,7 +37,8 @@ elif [ "$1" == "linux" ]; then
     cd $DIR
     source install-pip.sh
 else
-    echo "Command unknown..."
+    echo "Command unknown: $1..."
+    exit 1
 fi
 
 echo "Running post-install..."
