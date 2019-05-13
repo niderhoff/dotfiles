@@ -1,51 +1,35 @@
 #!/bin/bash
 set -e
-CONDAPATH="$HOME/anaconda2/bin/conda"
-platform="unknown"
 
 echo " ➡️  Trying to update all relevant stuff..."
 sudo -v
 
-if [[ "$(uname)" == "Darwin" ]]; then
-    echo " ➡️  Updating brew package list"
-    brew update && brew update
-    echo " ➡️  Updating brew packages"
-    brew upgrade
-elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
-    echo " ➡️  Updating apt package list"
-    sudo apt-get -qq update
-    echo " ➡️  Updating bpt packages"
-    sudo apt-get -qq upgrade
-fi
+echo " ➡️  Updating brew package list"
+brew update && brew update
 
-if [ -x "$(command -v $CONDAPATH)" ]; then
-    echo " ➡️  Updating anaconda distribution"
-    $CONDAPATH update conda -y
-#    $CONDAPATH update anaconda -y
-#    $CONDAPATH update --all -y
-fi
-
-if [ -x "$(command -v apm)" ]; then
-    echo " ➡️  Updating Atom packages"
-    apm upgrade --no-confirm
-fi
+echo " ➡️  Updating brew packages"
+brew upgrade
 
 #echo " ➡️  Updating ruby gems"
 #sudo gem update `gem list | cut -d ' ' -f 1`
 
-if [ -x "$(command -v npm)" ]; then
-    echo " ➡️  Updating node"
-    #npm install -g npm@latest
-    npm update -g
-fi
+#echo " ➡️  Updating npm"
+#npm install -g npm@latest
 
+#echo " -- Upgrading global packages"
 
-echo " ✅  Done."
+#npm update -g
 
-if [[ "$(uname)" == "Darwin" ]]; then
-    echo " ✅  Done. Running brew doctor just to be sure."
-    #brew cleanup
-    #brew doctor
-fi
+echo " ✅  Done. Running brew doctor just to be sure."
+
+brew cleanup
+
+echo " -- Cleaning up."
+
+brew doctor
+
+echo " -- Upgrading oh-my-zsh."
+
+env ZSH=$ZSH sh $ZSH/tools/upgrade.sh
 
 date > $DOTFILES/lastupdate

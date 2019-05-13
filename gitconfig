@@ -1,6 +1,11 @@
 [user]
 	name = Nicolas Iderhoff
 	email = nicolasiderhoff@googlemail.com
+[color]
+        ui = auto
+[core]
+        excludesfile = $HOME/.gitignore_global
+        editor = vim%
 [alias]
 	adog = log --all --decorate --oneline --graph
 	lg = !"git lg1"

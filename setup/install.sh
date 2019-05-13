@@ -53,3 +53,5 @@ else
     source $HOME/.bash_profile
     source $HOME/.bashrc
 fi
+
+source install-gi.sh

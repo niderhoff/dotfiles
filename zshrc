@@ -1,4 +1,4 @@
-# Because zsh onyl read z_profile
+# Because zsh only read z_profile
 source $HOME/.profile
 
 # Path to your oh-my-zsh installation.
@@ -12,6 +12,11 @@ if [[ $DOTFILES_OS = "WSL" ]]; then
         /mnt/c/Users/niid/Documents/Projects
         /mnt/c/Develop/projects
     )
+elif [[ $DOTFILES_OS == "osx" ]]; then
+    PROJECT_PATHS=(
+        $HOME/Documents/Projects
+    )
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
 #HELPDIR=/usr/local/share/zsh/help
@@ -20,7 +25,6 @@ fi
 ZSH_THEME=agnoster
 # BASE16_SHELL="$DOTFILES/colors/base16-ocean.dark.sh"
 # [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
-
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
@@ -41,10 +45,5 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-[ -r ".z_aliases" ] && source ".z_aliases"
-
-# nvm
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
+[ -r "$DOTFILES/z_aliases" ] && source "$DOTFILES/z_aliases"
 

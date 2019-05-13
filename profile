@@ -3,8 +3,13 @@ export DOTFILES=/home/niid/.dotfiles
 # check for WSL
 if [[ "$(< /proc/sys/kernel/osrelease)" == *Microsoft ]]; then
     export DOTFILES_OS="WSL"
+elif [[ "$(uname)" == "Darwin" ]]; then
+    export DOTFILES_OS="osx"
+elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
+    export DOTFILES_OS="linux"
+elif [[ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]]; then
+    export DOTFILES_OS="windows"
 fi
-
 
 # ----------- PATH -------------
 # set PATH so it includes user's private bin if it exists
@@ -29,6 +34,11 @@ fi
 
 export NNN_USE_EDITOR=1
 export PAGER=less
+
+if [[ $DOTFILES_OS == "osx" ]]; then
+    export LC_ALL=en_US.UTF-8
+    export LANG=en_US.UTF-8
+fi
 
 # ----------- PYTHON -----------
 # export PYVERSION=3
