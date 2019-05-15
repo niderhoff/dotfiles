@@ -5,7 +5,7 @@ if [[ "$(< /proc/sys/kernel/osrelease)" == *Microsoft ]]; then
     export DOTFILES_OS="WSL"
 elif [[ "$(uname)" == "Darwin" ]]; then
     export DOTFILES_OS="osx"
-    source $DOTFILES/colors/base16-ocean-dark.sh
+    source $DOTFILES/colors/base16-ocean.dark.sh
 elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
     export DOTFILES_OS="linux"
 elif [[ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]]; then
