@@ -1,7 +1,8 @@
 export DOTFILES=$HOME/.dotfiles
 
 # check for WSL
-if [[ "$(< /proc/sys/kernel/osrelease)" == *Microsoft ]]; then
+SYS_KERNEL=/proc/sys/kernel/osrelease
+if [[ -a $SYS_KERNEL && "$(< $SYS_KERNEL)" == *Microsoft ]]; then
     export DOTFILES_OS="WSL"
 elif [[ "$(uname)" == "Darwin" ]]; then
     export DOTFILES_OS="osx"
