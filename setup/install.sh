@@ -25,7 +25,7 @@ fi
 if [ "$1" == "wsl" ]; then
     if [[ -f ../proxy ]]; then
         echo "Loading Proxy Settings..."
-        . ../proxy
+        source ../proxy
         ln -s $DOTFILES/proxy $HOME/.proxy
     fi
     source install-wsl.sh
@@ -46,7 +46,8 @@ echo "Running post-install..."
 sed -i "s|<dotfiles>|$DOTFILES|g" ../profile
 
 if [ $INSTALL_ZSH ]; then
-    source install-zsh.sh
+    source $HOME/.zshrc
+    echo "Reloaded .zshrc..."
 else
     # clear screen
     # echo -en "\ec"
