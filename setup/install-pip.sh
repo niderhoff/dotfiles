@@ -1,3 +1,4 @@
+echo "Installing default pip packages..."
 if [ ! $PIP_BIN ]; then
     echo "ERROR: NO PIP BIN SET"
     exit 1

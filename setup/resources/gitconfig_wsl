@@ -8,7 +8,7 @@
     filemode = false
 	autocrlf = false
 [credential]
-	helper = "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
+	helper = "/mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
 [alias]
 	adog = log --all --decorate --oneline --graph
 	lg = !"git lg1"
