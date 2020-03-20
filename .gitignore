@@ -1,3 +1,4 @@
+gitignore_global
 mpd/*
 !mpd/mpd.conf
 ncmpcpp/error.log

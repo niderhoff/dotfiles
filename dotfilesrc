@@ -1,5 +1,5 @@
 [dotfiles]
-repository = $DOTFILES
+repository = /home/niid/.dotfiles
 ignore = [
     '.git',
     '.gitignore',

@@ -98,22 +98,26 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source /Users/idf/.todo/todo_completion
-complete -F _todo t
+if [ -f $HOME/.todo/todo_completion ]; then
+    . $HOME/.todo/todo_completion
+    complete -F _todo t
+fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/idf/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/niid/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/idf/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/idf/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/niid/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/niid/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/idf/miniconda3/bin:$PATH"
+        export PATH="/home/niid/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+

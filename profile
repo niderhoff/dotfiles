@@ -16,17 +16,23 @@ fi
 # ----------- PATH -------------
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.bin" ] ; then
-    PATH="$HOME/.bin:$PATH"
+    export PATH="$HOME/.bin:$PATH"
 fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [[ $DOTFILES_OS == "WSL" ]]; then
+    export HADOOP_HOME=/c/Develop/winutils/hadoop-2.7.1
+    export PATH="/mnt/c/Develop/sbt/bin:$PATH"
+    export PATH="/mnt/c/Users/niid/AppData/Local/Continuum/miniconda3/Scripts:$PATH"
 fi
 
 # ---------- ALIASES ----------
 # some default aliases
-[ -r "./aliases" ] && source "./aliases"
+[ -r "$HOME/.aliases" ] && source "$HOME/.aliases"
 
 # ---------- ENVIRONMENT -------
 # proxy switch scripts
@@ -36,6 +42,10 @@ fi
 
 export NNN_USE_EDITOR=1
 export PAGER=less
+
+if [[ $DOTFILES_OS == "WSL" ]]; then
+    LS_COLORS="ow=01;36;40" && export LS_COLORS
+fi
 
 if [[ $DOTFILES_OS == "osx" ]]; then
     export LC_ALL=en_US.UTF-8

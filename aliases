@@ -26,13 +26,15 @@ alias gsst="git submodule status --recursive"
 alias gsp="git submodule foreach git pull origin master"
 
 # darwin
-# alias oo='open .'
-# aliaso='open'
-# Hide/show all desktop icons (useful when presenting)
-# alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-# alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-# alias update="sh $DOTFILES/bin/updateall"
-# alias macupdate="sudo softwareupdate -i -a"
+if [[ $DOTFILES_OS == "osx" ]]; then
+    alias oo='open .'
+    aliaso='open'
+    #Hide/show all desktop icons (useful when presenting)
+    alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+    alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+    alias update="sh $DOTFILES/bin/updateall"
+    alias macupdate="sudo softwareupdate -i -a"
+fi
 
 # flavor
 alias exclude='echo "$1" >> .git/info/exclude'
@@ -47,9 +49,9 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+
 alias whois="whois -h whois-servers.net"
 
 alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump"sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias httpdump='sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\"'
 
-alias urlencode="python -c\"import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);\""
+alias urlencode='python -c\"import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);\"'
 
 function weather() {
     curl "https://wttr.in/${1-}";
