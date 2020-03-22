@@ -9,7 +9,6 @@ DEFAULT_USER=niid
 
 if [[ $DOTFILES_OS = "WSL" ]]; then
     PROJECT_PATHS=(
-        /mnt/c/Users/niid/Documents/Projects
         /mnt/c/Develop/projects
     )
 elif [[ $DOTFILES_OS == "osx" ]]; then
@@ -22,7 +21,7 @@ fi
 #HELPDIR=/usr/local/share/zsh/help
 #fpath=(/usr/local/share/zsh-completions $fpath)
 
-ZSH_THEME=agnoster
+ZSH_THEME=0i0
 # BASE16_SHELL="$DOTFILES/colors/base16-ocean.dark.sh"
 # [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
@@ -32,15 +31,9 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
     colored-man-pages
     colorize
-    git
+#    git
 #    git-aliases
-    pip
     pj
-    python
-    sudo
-    virtualenv
-    web-search
-    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -48,16 +41,17 @@ source $ZSH/oh-my-zsh.sh
 [ -r "$DOTFILES/z_aliases" ] && source "$DOTFILES/z_aliases"
 
 
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/idf/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/niid/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/idf/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/idf/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/niid/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/niid/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/idf/miniconda3/bin:$PATH"
+        export PATH="/home/niid/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

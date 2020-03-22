@@ -27,7 +27,6 @@ fi
 if [[ $DOTFILES_OS == "WSL" ]]; then
     export HADOOP_HOME=/c/Develop/winutils/hadoop-2.7.1
     export PATH="/mnt/c/Develop/sbt/bin:$PATH"
-    export PATH="/mnt/c/Users/niid/AppData/Local/Continuum/miniconda3/Scripts:$PATH"
 fi
 
 # ---------- ALIASES ----------

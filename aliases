@@ -65,6 +65,9 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 # alias jtlite="jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T"
 # alias jtdef="jt -r"
 
+alias jup='nohup jupyter notebook > ~/jupyter.log & echo $!> ~/jupyter.pid'
+alias kjup='kill -9 $(cat ~/jupyter.pid)'
+
 # jekyll
 # alias jsw="jekyll serve --watch"
 # alias je="jekyll serve"
