@@ -28,18 +28,20 @@ ZSH_THEME=0i0
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 
+export NVM_LAZY_LOAD=true
+
 plugins=(
     colored-man-pages
     colorize
-#    git
+    git
 #    git-aliases
     pj
+    zsh-nvm
 )
 
 source $ZSH/oh-my-zsh.sh
 
 [ -r "$DOTFILES/z_aliases" ] && source "$DOTFILES/z_aliases"
-
 
 
 # >>> conda initialize >>>

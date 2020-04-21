@@ -25,8 +25,8 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 if [[ $DOTFILES_OS == "WSL" ]]; then
-    export HADOOP_HOME=/c/Develop/winutils/hadoop-2.7.1
-    export PATH="/mnt/c/Develop/sbt/bin:$PATH"
+#    export HADOOP_HOME=/c/Develop/winutils/hadoop-2.7.1
+#    export PATH="/mnt/c/Develop/sbt/bin:$PATH"
 fi
 
 # ---------- ALIASES ----------
@@ -50,13 +50,6 @@ if [[ $DOTFILES_OS == "osx" ]]; then
     export LC_ALL=en_US.UTF-8
     export LANG=en_US.UTF-8
 fi
-
-# ----------- PYTHON -----------
-# export PYVERSION=3
-# export CONDA_BIN="$HOME/miniconda"$PYVERSION"/bin"
-# if [-d "$CONDA_BIN/bin" ]; then
-#     PATH="$CONDA_BIN/bin:$PATH"
-# fi
 
 # ----------- CUDA -------------
 # export CUDAVER=7.5
@@ -94,15 +87,5 @@ TODO_FILE="$HOME/.todo/todo.txt"
 if [ -f $TODO_FILE ]; then
     NUMTODO=$(cat $TODO_FILE | wc -l)
     echo "You have $NUMTODO tasks to do!"
-fi
-
-
-# ---------- BASH -------------
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
 fi
 
