@@ -1,7 +1,7 @@
 # color support
 if [ -x /usr/bin/dircolors ]; then
     test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
-    alias ls="ls -Gfh --color=auto"
+    alias ls="ls -CF --color=auto"
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -10,7 +10,7 @@ fi
 # some default aliases
 alias ll="ls -alF"
 alias la="ls -A"
-alias l='ls -CF'
+alias l='ls'
 
 alias hist="history | grep"
 
@@ -71,3 +71,6 @@ alias kjup='kill -9 $(cat ~/jupyter.pid)'
 # jekyll
 # alias jsw="jekyll serve --watch"
 # alias je="jekyll serve"
+
+# docker
+alias dr="sudo ~/.bin/docker-relay &"

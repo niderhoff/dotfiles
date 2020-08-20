@@ -24,9 +24,12 @@ if [ -d "$HOME/.local/bin" ] ; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [[ $DOTFILES_OS == "WSL" ]]; then
-#    export HADOOP_HOME=/c/Develop/winutils/hadoop-2.7.1
-#    export PATH="/mnt/c/Develop/sbt/bin:$PATH"
+if [ -d "/usr/local/go" ]; then
+    export PATH="$PATH:/usr/local/go/bin"
+fi
+
+if [ -d "$HOME/.cargo/bin" ]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 # ---------- ALIASES ----------
@@ -42,9 +45,9 @@ fi
 export NNN_USE_EDITOR=1
 export PAGER=less
 
-if [[ $DOTFILES_OS == "WSL" ]]; then
-    LS_COLORS="ow=01;36;40" && export LS_COLORS
-fi
+#if [[ $DOTFILES_OS == "WSL" ]]; then
+#    LS_COLORS="ow=01;36;40" && export LS_COLORS
+#fi
 
 if [[ $DOTFILES_OS == "osx" ]]; then
     export LC_ALL=en_US.UTF-8
@@ -89,3 +92,4 @@ if [ -f $TODO_FILE ]; then
     echo "You have $NUMTODO tasks to do!"
 fi
 
+export PATH="$HOME/.cargo/bin:$PATH"
