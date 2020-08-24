@@ -45,9 +45,9 @@ fi
 export NNN_USE_EDITOR=1
 export PAGER=less
 
-#if [[ $DOTFILES_OS == "WSL" ]]; then
-#    LS_COLORS="ow=01;36;40" && export LS_COLORS
-#fi
+if [[ $DOTFILES_OS == "WSL" || $DOTFILES_OS == "linux" ]]; then
+    LS_COLORS="ow=01;36;40" && export LS_COLORS
+fi
 
 if [[ $DOTFILES_OS == "osx" ]]; then
     export LC_ALL=en_US.UTF-8

@@ -24,6 +24,7 @@ eval "$(thefuck --alias)"
 # git
 alias gsst="git submodule status --recursive"
 alias gsp="git submodule foreach git pull origin master"
+alias lg="lazygit {$1-}"
 
 # darwin
 if [[ $DOTFILES_OS == "osx" ]]; then
