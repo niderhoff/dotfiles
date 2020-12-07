@@ -21,7 +21,9 @@ fi
 #HELPDIR=/usr/local/share/zsh/help
 #fpath=(/usr/local/share/zsh-completions $fpath)
 
-ZSH_THEME=0i0
+ZSH_THEME=af-magic
+#ZSH_THEME=dogenpunk
+#ZSH_THEME=nicoulaj
 # BASE16_SHELL="$DOTFILES/colors/base16-ocean.dark.sh"
 # [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
@@ -36,13 +38,12 @@ plugins=(
     git
 #    git-aliases
     pj
-    zsh-nvm
+    nvm
 )
 
 source $ZSH/oh-my-zsh.sh
 
 [ -r "$DOTFILES/z_aliases" ] && source "$DOTFILES/z_aliases"
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
