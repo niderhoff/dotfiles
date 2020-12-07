@@ -1,3 +1,4 @@
 alias refresh="source ~/.zshrc; echo \"Reloaded .zshrc.\""
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vim="nvim"

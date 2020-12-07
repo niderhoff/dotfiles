@@ -26,6 +26,11 @@ alias gsst="git submodule status --recursive"
 alias gsp="git submodule foreach git pull origin master"
 alias lg="lazygit {$1-}"
 
+# editor
+alias vim="nvim"
+export VISUAL="nvim"
+export EDITOR="$VISUAL"
+
 # darwin
 if [[ $DOTFILES_OS == "osx" ]]; then
     alias oo='open .'

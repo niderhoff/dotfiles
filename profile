@@ -32,6 +32,8 @@ if [ -d "$HOME/.cargo/bin" ]; then
     export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+PATH="$HOME/.dotnet:$PATH"
+
 # ---------- ALIASES ----------
 # some default aliases
 [ -r "$HOME/.aliases" ] && source "$HOME/.aliases"
@@ -61,20 +63,17 @@ fi
 # export CUDA_ROOT=/usr/local/cuda
 # export CUDABIN="/usr/local/cuda-$CUDAVER/bin"
 
-# ----------- NVM --------------
-# export NVM_DIR=$HOME/.nvm
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "NVM_DIR/bash_completion" # 
-
 # ---------- SSH ---------------
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 # if [[ -n $SSH_CONNECTION ]]; then
 if [ -n "$SSH_CLIENT" ]; then
     PS1="(ssh) $PS1"
     export EDITOR='vim'
+    export VISUAL="$EDITOR"
 else
     PS1=$PS1
-    export EDITOR='vim'
+    export EDITOR='nvim'
+    export VISUAL="$EDITOR"
 fi
 
 # ---------- WELCOME MSG --------
@@ -92,4 +91,13 @@ if [ -f $TODO_FILE ]; then
     echo "You have $NUMTODO tasks to do!"
 fi
 
-export PATH="$HOME/.cargo/bin:$PATH"
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+# ---------- BASH -------------
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi

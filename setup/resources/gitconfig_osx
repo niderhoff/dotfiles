@@ -2,7 +2,7 @@
         ui = auto
 [core]
         excludesfile = $HOME/.gitignore_global
-        editor = vim%
+        editor = nvim
 [alias]
 	adog = log --all --decorate --oneline --graph
 	lg = !"git lg1"
