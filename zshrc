@@ -21,9 +21,9 @@ fi
 #HELPDIR=/usr/local/share/zsh/help
 #fpath=(/usr/local/share/zsh-completions $fpath)
 
-ZSH_THEME=af-magic
+#ZSH_THEME=af-magic
 #ZSH_THEME=dogenpunk
-#ZSH_THEME=nicoulaj
+ZSH_THEME=nicoulaj
 # BASE16_SHELL="$DOTFILES/colors/base16-ocean.dark.sh"
 # [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
@@ -36,7 +36,6 @@ plugins=(
     colored-man-pages
     colorize
     git
-#    git-aliases
     pj
     nvm
 )
@@ -47,12 +46,9 @@ source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-#[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 if command -v pyenv 1>/dev/null 2>&1; then
+    echo "loading pyenv"
   eval "$(pyenv init -)"
+  pyenv virtualenvwrapper
 fi
 
-# virtualenvwrapper
-#export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-#export WORKON_HOME=$HOME/.virtualenvs
-#pyenv virtualenvwrapper_lazy

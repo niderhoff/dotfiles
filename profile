@@ -91,8 +91,6 @@ if [ -f $TODO_FILE ]; then
     echo "You have $NUMTODO tasks to do!"
 fi
 
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
 # ---------- BASH -------------
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
