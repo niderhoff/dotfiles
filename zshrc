@@ -16,6 +16,10 @@ elif [[ $DOTFILES_OS == "osx" ]]; then
         $HOME/Documents/Projects
     )
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+else
+    PROJECT_PATHS=(
+        $HOME/projects
+    )
 fi
 
 #HELPDIR=/usr/local/share/zsh/help
@@ -30,8 +34,6 @@ ZSH_THEME=nicoulaj
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 
-export NVM_LAZY_LOAD=true
-
 plugins=(
     colored-man-pages
     colorize
@@ -43,12 +45,4 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 [ -r "$DOTFILES/z_aliases" ] && source "$DOTFILES/z_aliases"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-if command -v pyenv 1>/dev/null 2>&1; then
-    echo "loading pyenv"
-  eval "$(pyenv init -)"
-  pyenv virtualenvwrapper
-fi
 

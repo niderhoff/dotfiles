@@ -14,7 +14,7 @@ Plug 'preservim/tagbar'
 Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'neovim/nvim-lspconfig'
+"Plug 'neovim/nvim-lspconfig'
 Plug 'itchyny/vim-cursorword'
 Plug 'tpope/vim-commentary'
 Plug 'neomake/neomake'
@@ -23,7 +23,8 @@ Plug 'jkramer/vim-checkbox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joshdick/onedark.vim'
 Plug 'bluz71/vim-moonfly-colors'
-Plug 'chriskempson/base16-vim'
+"Plug 'chriskempson/base16-vim'
+Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 set autoindent " on by default
@@ -149,22 +150,22 @@ nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
 nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 
 " neovim-lsp
-set completeopt = "menu,menuone,noinsert"
+"set completeopt = "menu,menuone,noinsert"
 
-nnoremap <silent> <c-b> <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+"nnoremap <silent> <c-b> <cmd>lua vim.lsp.buf.definition()<CR>
+"nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+"nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+"nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+"nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+"nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+"nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+"nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+"nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 
-lua require'lspconfig'.pyls_ms.setup{}
-lua require'lspconfig'.rust_analyzer.setup{}
-autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
-autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
+"lua require'lspconfig'.pyls_ms.setup{}
+"lua require'lspconfig'.rust_analyzer.setup{}
+"autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
+"autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 " neomake
 call neomake#configure#automake('nrw', 50) " when to activate automake
@@ -182,6 +183,10 @@ let g:airline#extensions#tabline#enabled = 2
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_statusline_ontop=0
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tmuxline#enabled = 0
+
+" tmuxline
+let g:tmuxline_preset = 'minimal'
 
 " NERDTree
 let g:NERDTreeShowIgnoredStatus = 0

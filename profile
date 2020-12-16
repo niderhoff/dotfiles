@@ -99,3 +99,23 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
+
+# ----------- NVM -------------
+export NVM_LAZY_LOAD=true
+if [[ $DOTFILES_OS == "osx" ]]; then
+    source $(brew --prefix nvm)/nvm.sh
+else
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
+# ----------- PYENV -----------
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  pyenv virtualenvwrapper
+  export PROJECT_HOME="$HOME/projects"
+fi
+

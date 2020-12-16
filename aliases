@@ -10,6 +10,7 @@ fi
 # some default aliases
 alias ll="ls -alF"
 alias la="ls -A"
+alias lh='ls -lh'
 alias l='ls'
 
 alias hist="history | grep"
