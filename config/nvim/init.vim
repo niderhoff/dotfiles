@@ -24,7 +24,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'joshdick/onedark.vim'
 Plug 'bluz71/vim-moonfly-colors'
 "Plug 'chriskempson/base16-vim'
-Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 set autoindent " on by default
@@ -183,10 +182,6 @@ let g:airline#extensions#tabline#enabled = 2
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_statusline_ontop=0
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tmuxline#enabled = 0
-
-" tmuxline
-let g:tmuxline_preset = 'minimal'
 
 " NERDTree
 let g:NERDTreeShowIgnoredStatus = 0

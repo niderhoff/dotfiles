@@ -1,3 +1,4 @@
+config/nvim/.netrwhist
 gitignore_global
 mpd/*
 !mpd/mpd.conf
