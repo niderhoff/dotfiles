@@ -9,3 +9,4 @@ lastupdate
 proxy
 config/nvim/plugged
 config/glab-cli
+config/fish/fishd.*
