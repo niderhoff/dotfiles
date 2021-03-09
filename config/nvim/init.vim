@@ -30,7 +30,7 @@ set autoindent " on by default
 set smartindent " automatically indent after context change
 set history=50
 set ruler " show cursor location in statusline
-"set relativenumber
+set relativenumber
 set showcmd " show incomplete cmds in statusline
 set showtabline=2 " default 1 (only show if >1tabs
 set termguicolors

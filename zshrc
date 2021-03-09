@@ -46,3 +46,11 @@ source $ZSH/oh-my-zsh.sh
 
 [ -r "$DOTFILES/z_aliases" ] && source "$DOTFILES/z_aliases"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+if command -v pyenv 1>/dev/null 2>&1; then
+    #echo "loading pyenv"
+  eval "$(pyenv init -)"
+  pyenv virtualenvwrapper
+fi
+

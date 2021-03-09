@@ -1,0 +1,5 @@
+[user]
+	name = Nicolas Iderhoff
+	email = hello@niid.xyz
+[core]
+	excludesfile = /Users/idf/.gitignore_global
