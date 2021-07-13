@@ -4,9 +4,12 @@ ignore = [
     '.git',
     '.gitignore',
     '.gitmodules',
+    'gitconfig',
     '*.swp',
     'README.md',
     'colors',
     'setup',
+    'mpd',
+    'ncmpcpp',
     'deprecated'
     ]

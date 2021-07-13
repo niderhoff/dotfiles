@@ -2,7 +2,7 @@
 call plug#begin()
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -10,20 +10,21 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/vista.vim'
-Plug 'preservim/tagbar'
+"Plug 'preservim/tagbar'
 Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-"Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'
 Plug 'itchyny/vim-cursorword'
 Plug 'tpope/vim-commentary'
 Plug 'neomake/neomake'
 Plug 'sbdchd/neoformat'
 Plug 'jkramer/vim-checkbox'
 Plug 'jiangmiao/auto-pairs'
-Plug 'joshdick/onedark.vim'
+"Plug 'joshdick/onedark.vim'
 Plug 'bluz71/vim-moonfly-colors'
 "Plug 'chriskempson/base16-vim'
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 set autoindent " on by default
@@ -149,21 +150,22 @@ nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
 nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 
 " neovim-lsp
-"set completeopt = "menu,menuone,noinsert"
+set completeopt = "menu,menuone,noinsert"
 
-"nnoremap <silent> <c-b> <cmd>lua vim.lsp.buf.definition()<CR>
-"nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-"nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-"nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-"nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-"nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-"nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-"nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-"nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> <c-b> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 
-"lua require'lspconfig'.pyls_ms.setup{}
+lua require'lspconfig'.pyright.setup{}
+"lua require'lspconfig'.pyls_ms.setup{cmd={"dotnet", "exec", "/home/niid/src/python-language-server/output/bin/Debug/Microsoft.Python.LanguageServer.dll"}}
 "lua require'lspconfig'.rust_analyzer.setup{}
-"autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
+autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 "autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 " neomake

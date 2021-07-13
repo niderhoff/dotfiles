@@ -32,7 +32,8 @@ if [ -d "$HOME/.cargo/bin" ]; then
     export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-PATH="$HOME/.dotnet:$PATH"
+export DOTNET_ROOT="$HOME/.dotnet"
+export PATH="$DOTNET_ROOT:$PATH"
 
 # ---------- ALIASES ----------
 # some default aliases
@@ -77,13 +78,13 @@ else
 fi
 
 # ---------- WELCOME MSG --------
-if [ -f /var/lib/apt/periodic/update-success-stamp ]; then
-    LASTAPT=$(ls -l /var/lib/apt/periodic/update-success-stamp | awk '{print $5" "$6" "$7}')
-    echo "The last apt-update was: $LASTAPT"
-fi
-if [ -f $DOTFILES/lastupdate ]; then
-    LASTUPDATE=$(cat $DOTFILES/lastupdate | sed -n 1p)
-fi
+#if [ -f /var/lib/apt/periodic/update-success-stamp ]; then
+#    LASTAPT=$(ls -l /var/lib/apt/periodic/update-success-stamp | awk '{print $5" "$6" "$7}')
+#    echo "The last apt-update was: $LASTAPT"
+#fi
+#if [ -f $DOTFILES/lastupdate ]; then
+#    LASTUPDATE=$(cat $DOTFILES/lastupdate | sed -n 1p)
+#fi
 
 TODO_FILE="$HOME/.todo/todo.txt"
 if [ -f $TODO_FILE ]; then

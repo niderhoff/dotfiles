@@ -12,8 +12,9 @@ alias ll="ls -alF"
 alias la="ls -A"
 alias lh='ls -lh'
 alias l='ls'
+alias r='ranger'
 
-alias hist="history | grep"
+alias h="history | grep"
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -47,7 +48,7 @@ fi
 alias exclude='echo "$1" >> .git/info/exclude'
 alias gurl="curl --compressed"
 
-alias wekK="date +%V"
+alias week="date +%V"
 
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
@@ -63,21 +64,13 @@ alias urlencode='python -c\"import sys, urllib as ul; print ul.quote_plus(sys.ar
 function weather() {
     curl "https://wttr.in/${1-}";
 }
+alias wttr='weather'
 alias moon="curl 'https://wttr.in/Moon'"
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
-# jupyter/python
-# alias jtdark="jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T"
-# alias jtlite="jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T"
-# alias jtdef="jt -r"
-
 alias jup='nohup jupyter notebook > ~/jupyter.log & echo $!> ~/jupyter.pid'
 alias kjup='kill -9 $(cat ~/jupyter.pid)'
 
-# jekyll
-# alias jsw="jekyll serve --watch"
-# alias je="jekyll serve"
-
 # docker
-alias dr="sudo ~/.bin/docker-relay &"
+#alias dr="sudo ~/.bin/docker-relay &"

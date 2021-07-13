@@ -1,0 +1,3 @@
+#!/bin/bash
+pjs=$(find /home/niid/projects/ -maxdepth 2 -type d -not -path "*/\.*")
+echo "$pjs" | sed 's|/home/niid/\(.*\)|\1|g'
