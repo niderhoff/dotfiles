@@ -4,6 +4,7 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
+"Plug 'nathanaelkane/vim-indent-guides'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'pbogut/fzf-mru.vim'
@@ -84,7 +85,6 @@ set shiftwidth=4  " by how many spaces to shift with < or >
 
 set stl=%!airline#statusline(2)
 set tal=%!airline#extensions#tabline#get()
-
 
 set foldenable
 
@@ -199,3 +199,11 @@ autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
     autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
   augroup END
 endif " has autocmd
+
+"indentLine
+"let g:indentLine_fileTypeExclude = ['markdown', 'json', 'yml', 'yaml', 'toml']
+let g:indentLine_concealcursor=""
+let g:indentLine_char = '⎸'
+"vim-indent-guides
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_start_level = 2
