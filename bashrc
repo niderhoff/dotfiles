@@ -109,3 +109,11 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# seafly prompt: https://github.com/bluz71/bash-seafly-prompt
+. ~/.bash-seafly-prompt/command_prompt.bash
+# gistatus: https://github.com/romkatv/gitstatus.git
+export SEAFLY_GITSTATUS_DIR=$HOME/.gitstatus
+export SEAFLY_SHOW_USER=1
+# When in an active Python Virtual Environment display the name of the current environment within parenthesis:
+export SEAFLY_PROMPT_PREFIX='if [[ -n $VIRTUAL_ENV ]]; then echo "($(basename $VIRTUAL_ENV))"; fi'
